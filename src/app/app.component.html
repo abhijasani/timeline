@@ -1,0 +1,26 @@
+<div>
+  <div style="display: grid; justify-content: center; margin: 10px 0px;">
+    <!-- <canvas #videoCanvas id="videoCanvas" style="border: 1px solid black;" ></canvas> -->
+    <div style="margin: 30px;">
+      <video width="640" height="360" id="my-video" controls>
+        <source id="videoSource" type="application/x-mpegURL">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+  </div>
+  <div style="width: 100%;">
+    <time-line (zoomLevel)="handleChangedTime($event)" [playTime]="currentTimeMs" (SendFileForPlayback)="onFilenameChange($event)"
+      (timeChange)="onTimeChange($event)"></time-line>
+  </div>
+  <select [(ngModel)]="selectedTime" (change)="onValueChange($event)" style="margin-left: 10px;">
+    <option value="24">24 Hr</option>
+    <option value="20">20 Hr</option>
+    <option value="16">16 Hr</option>
+    <option value="12">12 Hr</option>
+    <option value="8">8 Hr</option>
+    <option value="4">4 Hr</option>
+    <option value="1">1 Hr</option>
+  </select>
+
+</div>
